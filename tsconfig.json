@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-neo-modal": [
+        "dist/ngx-neo-modal"
+      ],
+      "ngx-neo-modal/*": [
+        "dist/ngx-neo-modal/*"
+      ]
+    }
   }
 }

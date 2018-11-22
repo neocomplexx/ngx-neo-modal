@@ -1,0 +1,48 @@
+<div id="myModal">
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" data-dismiss="myModal" (click)="informResult('None')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+    <div class="icons">
+      <div *ngIf="config.type === 'success'" class="swal2-icon swal2-success swal2-animate-success-icon">
+        <div class="swal2-success-circular-line-left"></div>
+        <span class="swal2-success-line-tip swal2-animate-success-line-tip"></span>
+        <span class="swal2-success-line-long swal2-animate-success-line-long"></span>
+        <div class="swal2-success-ring"></div>
+        <div class="swal2-success-fix"></div>
+        <div class="swal2-success-circular-line-right"></div>
+      </div>
+
+      <div *ngIf="config.type === 'error'" class="swal2-icon swal2-error swal2-animate-error-icon">
+        <span class="swal2-x-mark swal2-animate-x-mark">
+          <span class="swal2-x-mark-line-left"></span>
+          <span class="swal2-x-mark-line-right"></span>
+        </span>
+      </div>
+
+      <div *ngIf="config.type === 'warning'" class="swal2-icon swal2-warning">!</div>
+
+      <div *ngIf="config.type === 'info'" class="swal2-icon swal2-info">i</div>
+
+      <div *ngIf="config.type === 'question'" class="swal2-icon swal2-question">?</div>
+    </div>
+
+    <h4 *ngIf='config.title.visibility'>{{config.title.text}}</h4>
+    <p>{{config.message}}</p>
+    <div class="form-group">
+      <input id="neoInput" #myInput *ngIf='config.input.visibility' class="form-control" [(ngModel)]="config.input.value" placeholder={{config.input.placeholder}}
+        type='text' (keyup.enter)="setFocus()">
+    </div>
+  </div>
+
+  <div #buttons class="modal-footer">
+    <button id="neoBtnAccept" *ngIf='config.button.accept.visibility' type="button" class="btn btn-primary" (click)="informResult('Accept')">{{config.button.accept.text}}</button>
+    <button id="neoBtnCancel" *ngIf='config.button.cancel.visibility' type="button" class="btn btn-primary" (click)="informResult('Cancel')">{{config.button.cancel.text}}</button>
+    <button id="neoBtnYes" *ngIf='config.button.yes.visibility' type="button" class="btn btn-primary" (click)="informResult('Yes')">{{config.button.yes.text}}</button>
+    <button id="neoBtnRetry" *ngIf='config.button.retry.visibility' type="button" class="btn btn-primary" (click)="informResult('Retry')">{{config.button.retry.text}}</button>
+    <button id="neoBtnNo" *ngIf='config.button.no.visibility' type="button" class="btn btn-primary" (click)="informResult('No')">{{config.button.no.text}}</button>
+  </div>
+
+</div>

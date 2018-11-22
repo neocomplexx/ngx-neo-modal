@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "ngx-neo-modal": {
+      "root": "projects/ngx-neo-modal",
+      "sourceRoot": "projects/ngx-neo-modal/src",
+      "projectType": "library",
+      "prefix": "neo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-neo-modal/tsconfig.lib.json",
+            "project": "projects/ngx-neo-modal/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-neo-modal/src/test.ts",
+            "tsConfig": "projects/ngx-neo-modal/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-neo-modal/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-neo-modal/tsconfig.lib.json",
+              "projects/ngx-neo-modal/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "neo-modal"
