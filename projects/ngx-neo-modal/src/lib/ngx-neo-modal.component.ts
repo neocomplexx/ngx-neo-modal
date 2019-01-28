@@ -66,7 +66,7 @@ export class NgxNeoModalComponent implements AfterViewInit {
 
 
   ngAfterViewInit() {
-    this.activeFocus();
+    setTimeout(() => this.activeFocus(), 0);
   }
 
   private activeFocus(inputModal = true) {
@@ -74,7 +74,7 @@ export class NgxNeoModalComponent implements AfterViewInit {
     const inputFocus = this.getInputFocus();
 
     // Find element in DOM and focus.
-    if (inputFocus && inputModal) {
+    if (inputFocus && inputModal && (!foc || foc === 'neoBtnAccept')) {
       this.input.nativeElement.focus();
     } else if (foc) {
       const button = this.btn.nativeElement.children.namedItem(foc);
