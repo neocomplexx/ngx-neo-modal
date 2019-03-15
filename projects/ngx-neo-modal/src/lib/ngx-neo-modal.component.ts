@@ -1,13 +1,15 @@
 /* tslint:disable:no-bitwise */
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Component, AfterViewInit, ChangeDetectorRef, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, ChangeDetectorRef, ViewChild, ElementRef, OnDestroy, Inject } from '@angular/core';
+import { NgxNeoScrollBlockService } from './utilities/ngx-neo-scrollblock.service';
+import { BodyScrollOptions, SCROLL_CONFIG } from './utilities/interfaces';
 
 @Component({
   templateUrl: './ngx-neo-modal.component.html',
   styleUrls: ['./ngx-neo-modal.component.scss']
 })
 
-export class NgxNeoModalComponent implements AfterViewInit {
+export class NgxNeoModalComponent implements AfterViewInit, OnDestroy {
   // Default config
   public config = {
     title: {
@@ -59,14 +61,22 @@ export class NgxNeoModalComponent implements AfterViewInit {
 
   @ViewChild('buttons') btn: any;
   @ViewChild('myInput') input: any;
+  @ViewChild('myModal') modal: ElementRef;
 
-  constructor(public activeModal: NgbActiveModal, public changeRef: ChangeDetectorRef) {
+  constructor(public activeModal: NgbActiveModal, public changeRef: ChangeDetectorRef,
+    @Inject(SCROLL_CONFIG) private scrolconfig: BodyScrollOptions,
+    private neoScroll: NgxNeoScrollBlockService) {
   }
 
 
 
   ngAfterViewInit() {
     setTimeout(() => this.activeFocus(), 0);
+    this.neoScroll.disableBodyScroll(this.modal.nativeElement, this.scrolconfig);
+  }
+
+  ngOnDestroy() {
+    this.neoScroll.enableBodyScroll(this.modal.nativeElement);
   }
 
   private activeFocus(inputModal = true) {
