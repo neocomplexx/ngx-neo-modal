@@ -19,6 +19,7 @@ export class NgxNeoModalService {
     const modalRef = this.modalService.open(NgxNeoModalComponent, {
       backdrop: 'static',
       keyboard: false,
+      centered: true,
       windowClass: 'neoWindow'
     });
 
