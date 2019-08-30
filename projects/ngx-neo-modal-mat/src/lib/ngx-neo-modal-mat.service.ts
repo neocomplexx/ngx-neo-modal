@@ -25,10 +25,6 @@ export class NgxNeoModalMatService {
 
     return dialogRef.afterClosed().toPromise();
 
-
-    /*    modalRef.componentInstance.config = (this.mergeDeep(modalRef.componentInstance.config, config));
-        modalRef.componentInstance.changeRef.markForCheck();
-        return await modalRef.result; */
   }
 
 
