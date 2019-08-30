@@ -16,13 +16,14 @@ export class AppComponent {
   }
 
   public async  yesNoModal() {
-    const result: AlertResult = await this.neoModalService.decision('Are you soure?', null, null, AlertButton.Accept);
+    const result: AlertResult = await this.neoModalService.decision('Are you soure?', 'Ok', 'NO OK', AlertButton.Accept);
     if (result.ButtonResponse === AlertButton.Accept) {
       this.modalResult.button = 'Accept';
     } else {
       this.modalResult.button = 'Cancel';
     }
   }
+
 
   public async inputModal() {
     const result = await this.neoModalService.input('Input modal', 'With autofocus', null, true, null);
