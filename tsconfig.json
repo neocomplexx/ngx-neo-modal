@@ -23,6 +23,12 @@
       ],
       "ngx-neo-modal/*": [
         "dist/ngx-neo-modal/*"
+      ],
+      "ngx-neo-modal-mat": [
+        "dist/ngx-neo-modal-mat"
+      ],
+      "ngx-neo-modal-mat/*": [
+        "dist/ngx-neo-modal-mat/*"
       ]
     }
   }
