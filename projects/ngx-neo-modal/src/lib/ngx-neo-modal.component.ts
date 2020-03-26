@@ -28,7 +28,7 @@ export class NgxNeoModalComponent implements AfterViewInit {
         visibility: false,
         autofocus: false,
         text: 'Si',
-        id: 'neoBtnSi'
+        id: 'neoBtnYes'
       },
       no: {
         visibility: false,

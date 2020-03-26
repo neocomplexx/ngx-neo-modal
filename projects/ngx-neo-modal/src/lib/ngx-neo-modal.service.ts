@@ -232,7 +232,7 @@ export class NgxNeoModalService {
   // tslint:disable:no-bitwise
   public async yesNoCancel(title: string, message: string, buttonFocus: AlertButton): Promise<AlertResult> {
 
-    return this.custom(title, message, (AlertButton.Yes | AlertButton.No | AlertButton.Cancel), AlertButton.No);
+    return this.custom(title, message, (AlertButton.Yes | AlertButton.No | AlertButton.Cancel), buttonFocus);
   }
 
   private async custom(title: string, message: string, buttons: AlertButton, buttonFocus: AlertButton): Promise<AlertResult> {

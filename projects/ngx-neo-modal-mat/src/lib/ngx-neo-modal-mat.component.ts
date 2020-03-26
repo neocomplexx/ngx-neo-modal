@@ -31,7 +31,7 @@ export class NgxNeoModalMatComponent implements OnInit, AfterViewInit {
         visibility: false,
         autofocus: false,
         text: 'Si',
-        id: 'neoBtnSi'
+        id: 'neoBtnYes'
       },
       no: {
         visibility: false,

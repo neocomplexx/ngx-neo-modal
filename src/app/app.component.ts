@@ -1,4 +1,5 @@
-import { NgxNeoModalMatService, AlertButton, AlertResult } from 'ngx-neo-modal-mat';
+import { NgxNeoModalService, AlertButton, AlertResult } from 'ngx-neo-modal';
+// import { NgxNeoModalMatService, AlertButton, AlertResult } from 'ngx-neo-modal-mat';
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,14 +10,28 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public modalResult: any;
 
-  constructor(private neoModalService: NgxNeoModalMatService) { this.modalResult = new Object(); }
+  constructor(
+    private neoModalService: NgxNeoModalService
+    // private neoModalService: NgxNeoModalMatService
+    ) { this.modalResult = new Object(); }
 
   public async alertModal() {
     await window.alert('This is an alert.');
   }
 
   public async  yesNoModal() {
-    const result: AlertResult = await this.neoModalService.decision('Are you soure?', 'Ok', 'NO OK', AlertButton.Accept);
+    const result: AlertResult = await this.neoModalService.yesNoCancel('title msg', 'message', AlertButton.Cancel);
+    if (result.ButtonResponse === AlertButton.Yes) {
+      this.modalResult.button = 'Yes';
+    } else if (result.ButtonResponse === AlertButton.Cancel) {
+      this.modalResult.button = 'Cancel';
+    } else if (result.ButtonResponse === AlertButton.No) {
+      this.modalResult.button = 'No';
+    }
+  }
+
+  public async decision() {
+    const result = await this.neoModalService.decision('question msg', 'success msg', 'cancel msg', AlertButton.Accept);
     if (result.ButtonResponse === AlertButton.Accept) {
       this.modalResult.button = 'Accept';
     } else {
