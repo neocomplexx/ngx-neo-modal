@@ -57,8 +57,8 @@ export class NgxNeoModalComponent implements AfterViewInit {
     }
   };
 
-  @ViewChild('buttons') btn: any;
-  @ViewChild('myInput') input: any;
+  @ViewChild('buttons', { static: true }) btn: any;
+  @ViewChild('myInput', { static: false }) input: any;
 
   constructor(public activeModal: NgbActiveModal, public changeRef: ChangeDetectorRef) {
   }

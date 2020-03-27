@@ -1,10 +1,10 @@
 {
   "name": "@neocomplexx/ngx-neo-modal",
-  "version": "7.0.1",
+  "version": "8.0.0",
   "peerDependencies": {
-    "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0",
-    "@ng-bootstrap/ng-bootstrap": "^4.0.0"
+    "@angular/common": "~8.2.14",
+    "@angular/core": "~8.2.14",
+    "@ng-bootstrap/ng-bootstrap": "^5.3"
   },
   "author": {
     "name": "NeoComplexx",

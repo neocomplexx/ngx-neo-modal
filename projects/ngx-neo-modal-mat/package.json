@@ -1,12 +1,12 @@
 {
   "name": "@neocomplexx/ngx-neo-modal-mat",
-  "version": "7.0.2",
+  "version": "8.0.0",
   "peerDependencies": {
-    "@angular/common": "^7.1.0",
-    "@angular/core": "^7.1.0",
-    "@angular/material": "^7.2.1",
-    "@angular/animations": "~7.0.0",
-    "@angular/cdk": "^7.2.1"
+    "@angular/common": "~8.2.14",
+    "@angular/core": "~8.2.14",
+    "@angular/material": "^8.2.3",
+    "@angular/animations": "~8.2.14",
+    "@angular/cdk": "^8.2.3"
   },
   "author": {
     "name": "NeoComplexx",

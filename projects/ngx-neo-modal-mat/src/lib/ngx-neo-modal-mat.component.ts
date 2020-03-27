@@ -8,8 +8,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class NgxNeoModalMatComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('buttons') btn: any;
-  @ViewChild('myInput') input: any;
+  @ViewChild('buttons', { static: true }) btn: any;
+  @ViewChild('myInput', { static: false }) input: any;
 
 
   public config = {
