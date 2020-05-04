@@ -34,15 +34,15 @@
 </div>
 <mat-dialog-actions align="end" #buttons>
   <button mat-raised-button color="primary" id="neoBtnAccept" *ngIf='config.button.accept.visibility' type="button"
-    (click)="informResult('Accept')">{{config.button.accept.text}}</button>
+    (click)="informResult('Accept')">{{'BTNACCEPT' | translate}}</button>
   <button mat-raised-button color="primary" id="neoBtnCancel" *ngIf='config.button.cancel.visibility' type="button"
-    (click)="informResult('Cancel')">{{config.button.cancel.text}}</button>
+    (click)="informResult('Cancel')">{{'BTNCANCEL' | translate}}</button>
   <button mat-raised-button color="primary" id="neoBtnYes" *ngIf='config.button.yes.visibility' type="button"
-    (click)="informResult('Yes')">{{config.button.yes.text}}</button>
+    (click)="informResult('Yes')">{{'BTNYES' | translate}}</button>
   <button mat-raised-button color="primary" id="neoBtnRetry" *ngIf='config.button.retry.visibility' type="button"
-    (click)="informResult('Retry')">{{config.button.retry.text}}</button>
+    (click)="informResult('Retry')">{{'BTNRETR' | translate}}</button>
   <button mat-raised-button color="primary" id="neoBtnNo" *ngIf='config.button.no.visibility' type="button"
-    (click)="informResult('No')">{{config.button.no.text}}</button>
+    (click)="informResult('No')">{{'BTNO' | translate}}</button>
 </mat-dialog-actions>
 
 

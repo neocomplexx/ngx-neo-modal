@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [NgxNeoModalMatComponent],
@@ -13,7 +14,8 @@ import { CommonModule } from '@angular/common';
     MatDialogModule,
     MatButtonModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    TranslateModule.forChild({ extend: true })
   ],
   exports: [NgxNeoModalMatComponent],
   entryComponents: [NgxNeoModalMatComponent],

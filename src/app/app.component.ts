@@ -1,5 +1,5 @@
-import { NgxNeoModalService, AlertButton, AlertResult } from 'ngx-neo-modal';
-// import { NgxNeoModalMatService, AlertButton, AlertResult } from 'ngx-neo-modal-mat';
+//import { NgxNeoModalService, AlertButton, AlertResult } from 'ngx-neo-modal';
+import { NgxNeoModalMatService, AlertButton, AlertResult } from 'ngx-neo-modal-mat';
 import { Component } from '@angular/core';
 
 @Component({
@@ -11,9 +11,9 @@ export class AppComponent {
   public modalResult: any;
 
   constructor(
-    private neoModalService: NgxNeoModalService
-    // private neoModalService: NgxNeoModalMatService
-    ) { this.modalResult = new Object(); }
+    // private neoModalService: NgxNeoModalService
+    private neoModalService: NgxNeoModalMatService
+  ) { this.modalResult = new Object(); }
 
   public async alertModal() {
     await window.alert('This is an alert.');

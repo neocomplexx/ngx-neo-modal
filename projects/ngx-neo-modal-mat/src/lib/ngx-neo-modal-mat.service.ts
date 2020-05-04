@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NgxNeoModalMatComponent, AlertResult, AlertButton } from './ngx-neo-modal-mat.component';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class NgxNeoModalMatService {
 
   public originalAlert: any;
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, private translate: TranslateService) {
     this.originalAlert = window.alert;
     window.alert = async (msg) => {
       await this.alert(msg);
@@ -55,9 +56,10 @@ export class NgxNeoModalMatService {
    * Show succsessfull  message
    */
   public async success(msg: string, autofocus = true): Promise<AlertResult> {
+    const title = await this.translate.get('SUCCESSTITLE').toPromise();
     const config = {
       title: {
-        text: '¡Buen trabajo!'
+        text: title
       },
       message: msg,
       type: 'success',
@@ -78,9 +80,10 @@ export class NgxNeoModalMatService {
   * Warning message
   */
   public async warning(msg: string, autofocus = false): Promise<AlertResult> {
+    const title = await this.translate.get('WARNTITLE').toPromise();
     const config = {
       title: {
-        text: '¡Cuidado!'
+        text: title
       },
       message: msg,
       type: 'warning',
@@ -102,9 +105,10 @@ export class NgxNeoModalMatService {
  * Error message
  */
   public async error(msg: string, autofocus = true): Promise<AlertResult> {
+    const title = await this.translate.get('ERRORTITLE').toPromise();
     const config = {
       title: {
-        text: '¡Error!'
+        text: title
       },
       message: msg,
       type: 'error',
@@ -125,9 +129,10 @@ export class NgxNeoModalMatService {
    * Information message
    */
   public async info(msg: string, autofocus = true): Promise<AlertResult> {
+    const title = await this.translate.get('INFOTITLE').toPromise();
     const config = {
       title: {
-        text: '¡Información importante!'
+        text: title
       },
       message: msg,
       type: 'info',
@@ -152,9 +157,10 @@ export class NgxNeoModalMatService {
     const buttonAcceptFocus = autofocus === AlertButton.Accept;
     const buttonCancelFocus = autofocus === AlertButton.Cancel;
 
+    const title = await this.translate.get('DECISIONTITLE').toPromise();
     const config = {
       title: {
-        text: '¿Está seguro?'
+        text: title
       },
       message: questionMsg,
       type: 'question',
